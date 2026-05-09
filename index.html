@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portifólio</title>
+</head>
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>   
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <img src="/img/foto.jpg" class="foto-perfil">
+        <h1>Patricia Oliveira</h1>
+        <p class="paragrafo-1">Desenvolvedora Frontend</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+    <h2 class="sobre-titulo">Sobre mim</h2>
+    <div class="sobre-caixa">
+        <p class="sobre-paragrafo">Frontend Developer em formação com foco em desenvolvimento de aplicações web modernas. Desenvolvedora Frontend com foco em React e TypeScript, com experiência prática em projetos reais e freelance.Atuo na criação de aplicações web responsivas, integração com APIs REST e desenvolvimento de interfaces modernas focadas em UX.</p>
+    </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+        <div class="projeto-card">
+           <img src="/img/streaming.png" alt="projeto-1" class="projetos-imagem">
+           <div class="caixa-texto-projeto">
+             <h3 class="info-projetos">Streaming de filmes</h3>
+           <p class="paragrafo-projetos">Um streaming simples de filmes e séries tailandeses</p>
+        
+           </div>
+          </div>
+
+        <div class="projeto-card">
+           <img src="/img/mario.png" alt="projeto-2" class="projetos-imagem">
+           <div class="caixa-texto-projeto">
+           <h3 class="info-projetos">Jogo Mario</h3>
+           <p class="paragrafo-projetos"> Jogo do Mario feito com Javascript, HTML e CSS</p>
+           </div>
+        </div>
+
+        <div class="projeto-card">
+           <img src="/img/namorados.png" alt="projeto-3" class="projetos-imagem">
+           <div class="caixa-texto-projeto">
+            <h3 class="info-projetos">Pedido de Namoro</h3>
+           <p class="paragrafo-projetos">Um pedido de namoro feito com HTML, CSS e Javascript</p>
+    
+           </div>
+           </div>
+    </section>
+
+    <section id="contato" class="contato">
+    <h2 class="contato-titulo">Entre em contato</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <div class="grupo-form">
+        <input placeholder="nome" class="campo-form" id="nome">
+        </div>
+        <div class="grupo-form">
+        <textarea  class="campo-form" placeholder="Digite sua Mensagem" rows="5" id="mensagem"></textarea>
+        </div>
+        <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    </form>
+    </section>
+    <script>
+        function enviarWhats(event) {
+        event.preventDefault();
+            const nome =  document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5511940277272'; 
+
+        const texto = `Olá, meu nome é ${nome} e minha mensagem é: ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+        window.open(url, '_blank');
+        }
+        
+    </script>
+</body>
+</html>
